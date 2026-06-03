@@ -11,6 +11,43 @@
 </head>
 <body>
 
+  <!-- SITE-WIDE PALACE BACKDROP -->
+  <div class="site-palace" aria-hidden="true">
+    <svg viewBox="0 0 1400 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+      <g stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <line x1="0" y1="295" x2="1400" y2="295" opacity="0.5"/>
+        <path d="M115 295 L115 200 L135 200 L135 110 L120 100 L130 100 L125 75"/>
+        <path d="M110 200 L140 200"/>
+        <circle cx="125" cy="70" r="3"/>
+        <path d="M200 295 L200 235 L350 235 L350 295"/>
+        <line x1="235" y1="295" x2="235" y2="250" opacity="0.6"/>
+        <line x1="275" y1="295" x2="275" y2="250" opacity="0.6"/>
+        <line x1="315" y1="295" x2="315" y2="250" opacity="0.6"/>
+        <path d="M400 295 L400 220 Q450 145 500 220 L500 295"/>
+        <line x1="450" y1="150" x2="450" y2="120"/>
+        <circle cx="450" cy="115" r="3"/>
+        <path d="M560 295 L560 205 Q700 50 840 205 L840 295"/>
+        <line x1="700" y1="55" x2="700" y2="15"/>
+        <circle cx="700" cy="10" r="5"/>
+        <line x1="685" y1="20" x2="715" y2="20" opacity="0.7"/>
+        <path d="M620 295 L620 245 Q630 225 640 245 L640 295" opacity="0.65"/>
+        <path d="M665 295 L665 245 Q675 225 685 245 L685 295" opacity="0.65"/>
+        <path d="M710 295 L710 245 Q720 225 730 245 L730 295" opacity="0.65"/>
+        <path d="M755 295 L755 245 Q765 225 775 245 L775 295" opacity="0.65"/>
+        <path d="M900 295 L900 220 Q950 145 1000 220 L1000 295"/>
+        <line x1="950" y1="150" x2="950" y2="120"/>
+        <circle cx="950" cy="115" r="3"/>
+        <path d="M1050 295 L1050 235 L1200 235 L1200 295"/>
+        <line x1="1085" y1="295" x2="1085" y2="250" opacity="0.6"/>
+        <line x1="1125" y1="295" x2="1125" y2="250" opacity="0.6"/>
+        <line x1="1165" y1="295" x2="1165" y2="250" opacity="0.6"/>
+        <path d="M1265 295 L1265 200 L1285 200 L1285 110 L1270 100 L1280 100 L1275 75"/>
+        <path d="M1260 200 L1290 200"/>
+        <circle cx="1275" cy="70" r="3"/>
+      </g>
+    </svg>
+  </div>
+
   <!-- PALACE DOORS ENTRANCE -->
   <div class="palace-entrance" id="palaceEntrance">
     <div class="entrance-light"></div>
@@ -18,37 +55,18 @@
     <div class="entrance-door entrance-door-left">
       <svg class="door-svg" viewBox="0 0 200 700" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="doorGoldL" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#7A5F38"/>
-            <stop offset="25%" stop-color="#C8A96E"/>
-            <stop offset="50%" stop-color="#E8D2A0"/>
-            <stop offset="75%" stop-color="#C8A96E"/>
-            <stop offset="100%" stop-color="#7A5F38"/>
+          <linearGradient id="doorGoldL" x1="0%" y1="50%" x2="100%" y2="50%">
+            <stop offset="0%" stop-color="#9A7D4A"/>
+            <stop offset="60%" stop-color="#C8A96E"/>
+            <stop offset="95%" stop-color="#E2CB9B"/>
+            <stop offset="100%" stop-color="#FFE9B0"/>
           </linearGradient>
         </defs>
         <rect width="200" height="700" fill="url(#doorGoldL)"/>
-        <rect x="194" y="0" width="3" height="700" fill="rgba(255, 240, 200, 0.6)"/>
-        <g fill="none" stroke="rgba(50, 35, 12, 0.55)" stroke-width="1.3" stroke-linejoin="round">
-          <rect x="12" y="14" width="180" height="672"/>
-          <rect x="20" y="22" width="164" height="656"/>
-          <rect x="32" y="34" width="140" height="90"/>
-          <path d="M102 60 L120 79 L102 98 L84 79 Z" stroke-width="1.1"/>
-          <circle cx="102" cy="79" r="3.5" fill="rgba(50, 35, 12, 0.55)" stroke="none"/>
-          <rect x="32" y="136" width="140" height="350"/>
-          <path d="M172 290 Q126 290 126 330 Q126 370 172 370 Z" stroke-width="1.5"/>
-          <path d="M172 300 Q134 300 134 330 Q134 360 172 360"/>
-          <path d="M172 315 Q146 315 146 330 Q146 345 172 345"/>
-          <circle cx="158" cy="330" r="4" fill="rgba(50, 35, 12, 0.5)" stroke="none"/>
-          <path d="M52 156 Q62 166 72 156 Q62 171 52 156"/>
-          <path d="M132 156 Q142 166 152 156 Q142 171 132 156"/>
-          <path d="M52 466 Q62 456 72 466 Q62 451 52 466"/>
-          <path d="M132 466 Q142 456 152 466 Q142 451 132 466"/>
-          <line x1="62" y1="200" x2="62" y2="450" stroke-dasharray="1,4" opacity="0.6"/>
-          <line x1="142" y1="200" x2="142" y2="450" stroke-dasharray="1,4" opacity="0.6"/>
-          <rect x="32" y="498" width="140" height="180"/>
-          <circle cx="102" cy="588" r="20"/>
-          <circle cx="102" cy="588" r="12" stroke-dasharray="2,2"/>
-          <circle cx="102" cy="588" r="4" fill="rgba(50, 35, 12, 0.6)" stroke="none"/>
+        <g fill="none" stroke="rgba(50, 35, 12, 0.35)" stroke-width="1">
+          <rect x="16" y="16" width="168" height="668"/>
+          <line x1="100" y1="80" x2="100" y2="620" stroke-dasharray="1,5" opacity="0.5"/>
+          <path d="M88 348 L100 360 L88 372" stroke-width="1.2"/>
         </g>
       </svg>
     </div>
@@ -56,47 +74,20 @@
     <div class="entrance-door entrance-door-right">
       <svg class="door-svg" viewBox="0 0 200 700" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="doorGoldR" x1="100%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#7A5F38"/>
-            <stop offset="25%" stop-color="#C8A96E"/>
-            <stop offset="50%" stop-color="#E8D2A0"/>
-            <stop offset="75%" stop-color="#C8A96E"/>
-            <stop offset="100%" stop-color="#7A5F38"/>
+          <linearGradient id="doorGoldR" x1="100%" y1="50%" x2="0%" y2="50%">
+            <stop offset="0%" stop-color="#9A7D4A"/>
+            <stop offset="60%" stop-color="#C8A96E"/>
+            <stop offset="95%" stop-color="#E2CB9B"/>
+            <stop offset="100%" stop-color="#FFE9B0"/>
           </linearGradient>
         </defs>
         <rect width="200" height="700" fill="url(#doorGoldR)"/>
-        <rect x="3" y="0" width="3" height="700" fill="rgba(255, 240, 200, 0.6)"/>
-        <g fill="none" stroke="rgba(50, 35, 12, 0.55)" stroke-width="1.3" stroke-linejoin="round">
-          <rect x="8" y="14" width="180" height="672"/>
-          <rect x="16" y="22" width="164" height="656"/>
-          <rect x="28" y="34" width="140" height="90"/>
-          <path d="M98 60 L116 79 L98 98 L80 79 Z" stroke-width="1.1"/>
-          <circle cx="98" cy="79" r="3.5" fill="rgba(50, 35, 12, 0.55)" stroke="none"/>
-          <rect x="28" y="136" width="140" height="350"/>
-          <path d="M28 290 Q74 290 74 330 Q74 370 28 370 Z" stroke-width="1.5"/>
-          <path d="M28 300 Q66 300 66 330 Q66 360 28 360"/>
-          <path d="M28 315 Q54 315 54 330 Q54 345 28 345"/>
-          <circle cx="42" cy="330" r="4" fill="rgba(50, 35, 12, 0.5)" stroke="none"/>
-          <path d="M48 156 Q58 166 68 156 Q58 171 48 156"/>
-          <path d="M128 156 Q138 166 148 156 Q138 171 128 156"/>
-          <path d="M48 466 Q58 456 68 466 Q58 451 48 466"/>
-          <path d="M128 466 Q138 456 148 466 Q138 451 128 466"/>
-          <line x1="58" y1="200" x2="58" y2="450" stroke-dasharray="1,4" opacity="0.6"/>
-          <line x1="138" y1="200" x2="138" y2="450" stroke-dasharray="1,4" opacity="0.6"/>
-          <rect x="28" y="498" width="140" height="180"/>
-          <circle cx="98" cy="588" r="20"/>
-          <circle cx="98" cy="588" r="12" stroke-dasharray="2,2"/>
-          <circle cx="98" cy="588" r="4" fill="rgba(50, 35, 12, 0.6)" stroke="none"/>
+        <g fill="none" stroke="rgba(50, 35, 12, 0.35)" stroke-width="1">
+          <rect x="16" y="16" width="168" height="668"/>
+          <line x1="100" y1="80" x2="100" y2="620" stroke-dasharray="1,5" opacity="0.5"/>
+          <path d="M112 348 L100 360 L112 372" stroke-width="1.2"/>
         </g>
       </svg>
-    </div>
-
-    <div class="entrance-flash"></div>
-
-    <div class="entrance-welcome">
-      <div class="entrance-eyebrow">— Welcome to —</div>
-      <div class="entrance-title">Money Tree<br/>Financial</div>
-      <div class="entrance-sub">Step Inside</div>
     </div>
   </div>
 
@@ -172,58 +163,6 @@
       <span class="star" style="top:34%;left:46%"></span>
       <span class="star" style="top:28%;left:80%"></span>
     </div>
-
-    <!-- Palace silhouette -->
-    <svg class="hero-palace" viewBox="0 0 1400 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g stroke="#C8A96E" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none">
-        <!-- horizon -->
-        <line x1="0" y1="295" x2="1400" y2="295" opacity="0.3"/>
-
-        <!-- far left tower -->
-        <path d="M115 295 L115 200 L135 200 L135 110 L120 100 L130 100 L125 75"/>
-        <path d="M110 200 L140 200"/>
-        <circle cx="125" cy="70" r="3"/>
-
-        <!-- left wing building -->
-        <path d="M200 295 L200 235 L350 235 L350 295"/>
-        <line x1="235" y1="295" x2="235" y2="250" opacity="0.5"/>
-        <line x1="275" y1="295" x2="275" y2="250" opacity="0.5"/>
-        <line x1="315" y1="295" x2="315" y2="250" opacity="0.5"/>
-
-        <!-- left small dome -->
-        <path d="M400 295 L400 220 Q450 145 500 220 L500 295"/>
-        <line x1="450" y1="150" x2="450" y2="120"/>
-        <circle cx="450" cy="115" r="3"/>
-
-        <!-- central main palace -->
-        <path d="M560 295 L560 205 Q700 50 840 205 L840 295"/>
-        <line x1="700" y1="55" x2="700" y2="15"/>
-        <circle cx="700" cy="10" r="5"/>
-        <line x1="685" y1="20" x2="715" y2="20" opacity="0.6"/>
-
-        <!-- main palace windows / arches -->
-        <path d="M620 295 L620 245 Q630 225 640 245 L640 295" opacity="0.55"/>
-        <path d="M665 295 L665 245 Q675 225 685 245 L685 295" opacity="0.55"/>
-        <path d="M710 295 L710 245 Q720 225 730 245 L730 295" opacity="0.55"/>
-        <path d="M755 295 L755 245 Q765 225 775 245 L775 295" opacity="0.55"/>
-
-        <!-- right small dome -->
-        <path d="M900 295 L900 220 Q950 145 1000 220 L1000 295"/>
-        <line x1="950" y1="150" x2="950" y2="120"/>
-        <circle cx="950" cy="115" r="3"/>
-
-        <!-- right wing building -->
-        <path d="M1050 295 L1050 235 L1200 235 L1200 295"/>
-        <line x1="1085" y1="295" x2="1085" y2="250" opacity="0.5"/>
-        <line x1="1125" y1="295" x2="1125" y2="250" opacity="0.5"/>
-        <line x1="1165" y1="295" x2="1165" y2="250" opacity="0.5"/>
-
-        <!-- far right tower -->
-        <path d="M1265 295 L1265 200 L1285 200 L1285 110 L1270 100 L1280 100 L1275 75"/>
-        <path d="M1260 200 L1290 200"/>
-        <circle cx="1275" cy="70" r="3"/>
-      </g>
-    </svg>
 
     <div class="hero-eyebrow reveal">Life Insurance Leader &amp; Mentor</div>
 
