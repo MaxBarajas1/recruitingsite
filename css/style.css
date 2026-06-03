@@ -568,6 +568,14 @@ section { padding: 7rem 6vw; }
   padding: 3.5rem 6vw;
 }
 .about-photo-wrap { position: relative; }
+.about-photo {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+  filter: brightness(1.05) contrast(1.05) saturate(0.95);
+}
 .about-photo-placeholder {
   width: 100%;
   aspect-ratio: 4/3;
@@ -1234,20 +1242,6 @@ footer { background: rgba(17, 17, 17, 0.9); }
 body { background: var(--bg); }
 
 /* ── ROYAL PALACE ELEMENTS (hero only) ── */
-  position: absolute;
-  top: 38%;
-  left: 28%;
-  transform: translate(-50%, -50%);
-  width: 700px;
-  height: 700px;
-  opacity: 0.08;
-  pointer-events: none;
-  z-index: 0;
-  animation: sunburstRotate 90s linear infinite;
-}
-@keyframes sunburstRotate {
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
 
 .hero-stars {
   position: absolute;
@@ -1376,7 +1370,6 @@ body { background: var(--bg); }
 
   .hero-bg-word { font-size: 40vw; bottom: -5vw; }
   .hero-palace { opacity: 0.18; width: 200%; bottom: 0; }
-  .hero-sunburst { width: 500px; height: 500px; top: 30%; }
   .fleuron-divider { padding: 2rem 5vw; gap: 1rem; }
   .fleuron-line { max-width: 80px; }
   .fleuron-divider svg { width: 60px; }
