@@ -3,12 +3,30 @@
    main.js — PREMIUM EDITION
    ============================================= */
 
-// ── LOADING SCREEN ──
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('loader').classList.add('hidden');
-  }, 1800);
-});
+// ── PALACE DOORS ENTRANCE ──
+(function() {
+  const entrance = document.getElementById('palaceEntrance');
+  if (!entrance) return;
+  document.body.style.overflow = 'hidden';
+
+  function startOpening() {
+    setTimeout(() => entrance.classList.add('opening'), 200);
+    // Total animation: 0.2s pause + 1.4s text + 1.8s open = 3.4s
+    setTimeout(() => {
+      entrance.classList.add('gone');
+      document.body.style.overflow = '';
+    }, 3500);
+    setTimeout(() => entrance.remove(), 4200);
+  }
+
+  if (document.readyState === 'complete') {
+    startOpening();
+  } else {
+    window.addEventListener('load', startOpening);
+    // Safety fallback in case load never fires
+    setTimeout(startOpening, 2500);
+  }
+})();
 
 // ── SMOOTH SCROLL ──
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

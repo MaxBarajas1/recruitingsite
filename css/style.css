@@ -33,61 +33,133 @@ body {
   overflow-x: hidden;
 }
 
-/* ── LOADING SCREEN ── */
-.loader {
+/* ── PALACE DOORS ENTRANCE ── */
+.palace-entrance {
   position: fixed; inset: 0;
-  background: var(--bg);
   z-index: 9999;
-  display: flex; align-items: center; justify-content: center;
-  transition: opacity 0.8s ease, visibility 0.8s ease;
-}
-.loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-.loader-content {
-  display: flex; flex-direction: column; align-items: center; gap: 1.75rem;
-}
-.loader-mark {
-  display: flex; gap: 0.4rem;
-  font-family: var(--serif);
-  font-size: 4rem;
-  font-weight: 300;
-  color: var(--gold);
-  letter-spacing: 0.05em;
-}
-.loader-mark span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: loaderLetter 0.6s ease forwards;
-}
-.loader-mark span:nth-child(1) { animation-delay: 0.1s; }
-.loader-mark span:nth-child(2) { animation-delay: 0.25s; }
-.loader-mark span:nth-child(3) { animation-delay: 0.4s; }
-@keyframes loaderLetter {
-  to { opacity: 1; transform: translateY(0); }
-}
-.loader-bar {
-  width: 180px; height: 1px;
-  background: rgba(200,169,110,0.15);
   overflow: hidden;
+  background: #050505;
 }
-.loader-bar-fill {
-  width: 0%; height: 100%;
-  background: var(--gold);
-  animation: loaderBar 1.4s ease 0.3s forwards;
+.palace-entrance.gone { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.5s, visibility 0.5s; }
+
+.entrance-door {
+  position: absolute;
+  top: 0;
+  width: 50.5%;
+  height: 100%;
+  box-shadow: 0 0 80px rgba(0,0,0,0.85);
+  will-change: transform;
 }
-@keyframes loaderBar {
-  to { width: 100%; }
+.entrance-door-left { left: 0; }
+.entrance-door-right { right: 0; }
+.door-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  display: block;
 }
-.loader-text {
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--text-dim);
+
+/* Doors closed by default; animate open when .opening added */
+.palace-entrance.opening .entrance-door-left {
+  animation: doorOpenLeft 1.8s cubic-bezier(0.7, 0.05, 0.3, 1) 1.4s forwards;
+}
+.palace-entrance.opening .entrance-door-right {
+  animation: doorOpenRight 1.8s cubic-bezier(0.7, 0.05, 0.3, 1) 1.4s forwards;
+}
+@keyframes doorOpenLeft { to { transform: translateX(-105%); } }
+@keyframes doorOpenRight { to { transform: translateX(105%); } }
+
+/* Glowing light between doors */
+.entrance-light {
+  position: absolute;
+  top: 0; left: 50%;
+  width: 6px; height: 100%;
+  background: linear-gradient(to right, transparent, #FFE9B0 30%, #FFFFFF 50%, #FFE9B0 70%, transparent);
+  transform: translateX(-50%);
   opacity: 0;
-  animation: fadeIn 0.6s ease 0.6s forwards;
+  z-index: 5;
+  filter: blur(8px);
+  pointer-events: none;
 }
-@keyframes fadeIn {
-  to { opacity: 1; }
+.palace-entrance.opening .entrance-light {
+  animation: entranceLight 1.8s ease-in-out 1.3s forwards;
+}
+@keyframes entranceLight {
+  0%   { width: 6px;   opacity: 0;   filter: blur(8px); }
+  15%  { width: 40px;  opacity: 1;   filter: blur(12px); }
+  45%  { width: 50vw;  opacity: 0.9; filter: blur(30px); }
+  100% { width: 110vw; opacity: 0;   filter: blur(60px); }
+}
+
+/* Bright flash at the moment doors fully part */
+.entrance-flash {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, #FFF6D8 0%, rgba(255,233,176,0.4) 30%, transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 6;
+}
+.palace-entrance.opening .entrance-flash {
+  animation: entranceFlash 1s ease-out 1.9s forwards;
+}
+@keyframes entranceFlash {
+  0%   { opacity: 0; transform: scale(0.6); }
+  40%  { opacity: 0.7; transform: scale(1.1); }
+  100% { opacity: 0; transform: scale(1.4); }
+}
+
+/* Welcome text over the closed doors */
+.entrance-welcome {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+  width: 90%;
+  max-width: 800px;
+}
+.entrance-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(40, 25, 5, 0.8);
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: welcomeIn 0.7s ease 0.3s forwards;
+}
+.entrance-title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: rgba(30, 18, 0, 0.9);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: welcomeIn 0.9s ease 0.55s forwards;
+  text-shadow: 0 1px 0 rgba(255, 240, 200, 0.4);
+}
+.entrance-sub {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: rgba(40, 25, 5, 0.75);
+  opacity: 0;
+  animation: welcomeIn 0.7s ease 0.85s forwards, sub-knock 1.5s ease-in-out 1.6s infinite;
+}
+@keyframes welcomeIn { to { opacity: 1; } }
+@keyframes sub-knock {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+.palace-entrance.opening .entrance-welcome {
+  animation: welcomeOut 0.5s ease 1.1s forwards;
+}
+@keyframes welcomeOut {
+  to { opacity: 0; transform: translate(-50%, -50%) scale(1.15); filter: blur(4px); }
 }
 
 /* ── CUSTOM CURSOR ── */
@@ -1387,6 +1459,9 @@ footer {
   .footer-links { flex-wrap: wrap; gap: 1.25rem; }
 
   .loader-mark { font-size: 3rem; }
+  .entrance-title { font-size: clamp(2rem, 9vw, 3.5rem); }
+  .entrance-eyebrow { font-size: 0.62rem; letter-spacing: 0.3em; }
+  .entrance-sub { font-size: 0.62rem; letter-spacing: 0.4em; }
 }
 
 /* ── SMALL PHONES (≤ 380px) ── */
