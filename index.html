@@ -61,6 +61,92 @@
     <div class="hero-bg-word">LEGACY</div>
     <div class="particles" id="particles"></div>
 
+    <!-- Sunburst rays behind name -->
+    <svg class="hero-sunburst" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g stroke="#C8A96E" stroke-width="1" fill="none">
+        <line x1="400" y1="0" x2="400" y2="800"/>
+        <line x1="0" y1="400" x2="800" y2="400"/>
+        <line x1="59" y1="59" x2="741" y2="741"/>
+        <line x1="741" y1="59" x2="59" y2="741"/>
+        <line x1="200" y1="0" x2="600" y2="800"/>
+        <line x1="600" y1="0" x2="200" y2="800"/>
+        <line x1="0" y1="200" x2="800" y2="600"/>
+        <line x1="0" y1="600" x2="800" y2="200"/>
+        <line x1="300" y1="0" x2="500" y2="800"/>
+        <line x1="500" y1="0" x2="300" y2="800"/>
+        <line x1="0" y1="300" x2="800" y2="500"/>
+        <line x1="0" y1="500" x2="800" y2="300"/>
+      </g>
+      <circle cx="400" cy="400" r="120" stroke="#C8A96E" stroke-width="1" fill="none"/>
+      <circle cx="400" cy="400" r="80" stroke="#C8A96E" stroke-width="1" fill="none"/>
+    </svg>
+
+    <!-- Twinkling stars -->
+    <div class="hero-stars">
+      <span class="star" style="top:14%;left:10%"></span>
+      <span class="star" style="top:8%;left:22%"></span>
+      <span class="star" style="top:20%;left:38%"></span>
+      <span class="star" style="top:6%;left:55%"></span>
+      <span class="star" style="top:16%;left:72%"></span>
+      <span class="star" style="top:24%;left:88%"></span>
+      <span class="star" style="top:12%;left:64%"></span>
+      <span class="star" style="top:30%;left:18%"></span>
+      <span class="star" style="top:34%;left:46%"></span>
+      <span class="star" style="top:28%;left:80%"></span>
+    </div>
+
+    <!-- Palace silhouette -->
+    <svg class="hero-palace" viewBox="0 0 1400 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g stroke="#C8A96E" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <!-- horizon -->
+        <line x1="0" y1="295" x2="1400" y2="295" opacity="0.3"/>
+
+        <!-- far left tower -->
+        <path d="M115 295 L115 200 L135 200 L135 110 L120 100 L130 100 L125 75"/>
+        <path d="M110 200 L140 200"/>
+        <circle cx="125" cy="70" r="3"/>
+
+        <!-- left wing building -->
+        <path d="M200 295 L200 235 L350 235 L350 295"/>
+        <line x1="235" y1="295" x2="235" y2="250" opacity="0.5"/>
+        <line x1="275" y1="295" x2="275" y2="250" opacity="0.5"/>
+        <line x1="315" y1="295" x2="315" y2="250" opacity="0.5"/>
+
+        <!-- left small dome -->
+        <path d="M400 295 L400 220 Q450 145 500 220 L500 295"/>
+        <line x1="450" y1="150" x2="450" y2="120"/>
+        <circle cx="450" cy="115" r="3"/>
+
+        <!-- central main palace -->
+        <path d="M560 295 L560 205 Q700 50 840 205 L840 295"/>
+        <line x1="700" y1="55" x2="700" y2="15"/>
+        <circle cx="700" cy="10" r="5"/>
+        <line x1="685" y1="20" x2="715" y2="20" opacity="0.6"/>
+
+        <!-- main palace windows / arches -->
+        <path d="M620 295 L620 245 Q630 225 640 245 L640 295" opacity="0.55"/>
+        <path d="M665 295 L665 245 Q675 225 685 245 L685 295" opacity="0.55"/>
+        <path d="M710 295 L710 245 Q720 225 730 245 L730 295" opacity="0.55"/>
+        <path d="M755 295 L755 245 Q765 225 775 245 L775 295" opacity="0.55"/>
+
+        <!-- right small dome -->
+        <path d="M900 295 L900 220 Q950 145 1000 220 L1000 295"/>
+        <line x1="950" y1="150" x2="950" y2="120"/>
+        <circle cx="950" cy="115" r="3"/>
+
+        <!-- right wing building -->
+        <path d="M1050 295 L1050 235 L1200 235 L1200 295"/>
+        <line x1="1085" y1="295" x2="1085" y2="250" opacity="0.5"/>
+        <line x1="1125" y1="295" x2="1125" y2="250" opacity="0.5"/>
+        <line x1="1165" y1="295" x2="1165" y2="250" opacity="0.5"/>
+
+        <!-- far right tower -->
+        <path d="M1265 295 L1265 200 L1285 200 L1285 110 L1270 100 L1280 100 L1275 75"/>
+        <path d="M1260 200 L1290 200"/>
+        <circle cx="1275" cy="70" r="3"/>
+      </g>
+    </svg>
+
     <div class="hero-eyebrow reveal">Life Insurance Leader &amp; Mentor</div>
 
     <h1 class="hero-name reveal">
@@ -172,6 +258,7 @@
 
     <div class="opportunity-grid reveal">
       <div class="opp-card tilt" data-tilt>
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
         <div class="opp-number">01</div>
         <h3 class="opp-title">Unlimited Income Potential</h3>
         <p class="opp-desc">
@@ -179,6 +266,7 @@
         </p>
       </div>
       <div class="opp-card tilt" data-tilt>
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
         <div class="opp-number">02</div>
         <h3 class="opp-title">Hands-On Mentorship</h3>
         <p class="opp-desc">
@@ -186,6 +274,7 @@
         </p>
       </div>
       <div class="opp-card tilt" data-tilt>
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
         <div class="opp-number">03</div>
         <h3 class="opp-title">Residual &amp; Renewal Income</h3>
         <p class="opp-desc">
@@ -193,6 +282,7 @@
         </p>
       </div>
       <div class="opp-card tilt" data-tilt>
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
         <div class="opp-number">04</div>
         <h3 class="opp-title">Flexible Schedule</h3>
         <p class="opp-desc">
@@ -200,6 +290,7 @@
         </p>
       </div>
       <div class="opp-card tilt" data-tilt>
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
         <div class="opp-number">05</div>
         <h3 class="opp-title">Build Your Own Agency</h3>
         <p class="opp-desc">
@@ -207,6 +298,7 @@
         </p>
       </div>
       <div class="opp-card tilt" data-tilt>
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
         <div class="opp-number">06</div>
         <h3 class="opp-title">Licensing &amp; Onboarding Support</h3>
         <p class="opp-desc">
@@ -259,6 +351,7 @@
 
     <div class="testimonials-grid reveal">
       <div class="testimonial tilt" data-tilt>
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
         <p class="testimonial-text">
           I was a teacher for 11 years and had no idea what life insurance even was. Corey answered every question I had, walked me through licensing, and by month six I was earning more than I ever had in a classroom. This changed my family's life.
         </p>
@@ -272,6 +365,7 @@
       </div>
 
       <div class="testimonial tilt" data-tilt>
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
         <p class="testimonial-text">
           What sets Corey apart from every other recruiter I've spoken with is that he actually shows up. He was at my first client appointment. He reviewed my pitches. He celebrated my wins and coached me through my losses. You can't put a price on that kind of mentorship.
         </p>
@@ -285,6 +379,7 @@
       </div>
 
       <div class="testimonial tilt" data-tilt>
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
         <p class="testimonial-text">
           I came in as a licensed agent from another agency who had zero direction. Within 90 days with Corey's team, I doubled my production. Now I'm building my own team under him at Money Tree Financial. The system here is real and the culture is unlike anything I've experienced in this industry.
         </p>
@@ -298,6 +393,19 @@
       </div>
     </div>
   </section>
+
+  <!-- FLEURON DIVIDER -->
+  <div class="fleuron-divider reveal" aria-hidden="true">
+    <span class="fleuron-line"></span>
+    <svg viewBox="0 0 80 24" width="80" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#C8A96E" stroke-width="1" stroke-linecap="round">
+      <path d="M40 4 L40 20 M32 12 L48 12"/>
+      <path d="M40 4 Q34 8 32 12 Q34 16 40 20 Q46 16 48 12 Q46 8 40 4"/>
+      <circle cx="40" cy="12" r="2" fill="#C8A96E"/>
+      <path d="M20 12 Q10 6 4 12 Q10 18 20 12" opacity="0.6"/>
+      <path d="M60 12 Q70 6 76 12 Q70 18 60 12" opacity="0.6"/>
+    </svg>
+    <span class="fleuron-line"></span>
+  </div>
 
   <!-- BIG CTA BANNER -->
   <section class="cta-banner">

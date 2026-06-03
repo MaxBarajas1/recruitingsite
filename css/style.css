@@ -339,7 +339,7 @@ nav {
   color: var(--gold);
   margin-bottom: 1.5rem;
   display: flex; align-items: center; gap: 1rem;
-  position: relative; z-index: 2;
+  position: relative; z-index: 3;
 }
 .hero-eyebrow::before {
   content: '';
@@ -353,7 +353,7 @@ nav {
   line-height: 1;
   color: var(--text);
   margin-bottom: 0.25rem;
-  position: relative; z-index: 2;
+  position: relative; z-index: 3;
 }
 .hero-name em {
   font-style: italic;
@@ -406,13 +406,13 @@ nav {
   color: var(--text-muted);
   margin-bottom: 2.5rem;
   letter-spacing: 0.03em;
-  position: relative; z-index: 2;
+  position: relative; z-index: 3;
 }
 .hero-divider {
   width: 80px; height: 1px;
   background: linear-gradient(to right, var(--gold), transparent);
   margin-bottom: 2rem;
-  position: relative; z-index: 2;
+  position: relative; z-index: 3;
 }
 .hero-tagline {
   max-width: 500px;
@@ -421,11 +421,11 @@ nav {
   color: var(--text-muted);
   line-height: 1.9;
   margin-bottom: 3rem;
-  position: relative; z-index: 2;
+  position: relative; z-index: 3;
 }
 .hero-actions {
   display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
-  position: relative; z-index: 2;
+  position: relative; z-index: 3;
 }
 
 /* ── PRIMARY BUTTON ── */
@@ -481,7 +481,7 @@ nav {
 .hero-stats {
   position: absolute; right: 6vw; bottom: 5rem;
   display: flex; gap: 3rem;
-  z-index: 2;
+  z-index: 3;
 }
 .hero-stat { text-align: right; }
 .hero-stat .num {
@@ -1203,6 +1203,94 @@ footer {
   font-weight: 600;
 }
 
+/* ── ROYAL PALACE ELEMENTS ── */
+.hero-palace {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110%;
+  max-width: 1600px;
+  height: auto;
+  opacity: 0.22;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 0 20px rgba(200,169,110,0.15));
+}
+
+.hero-sunburst {
+  position: absolute;
+  top: 38%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+  animation: sunburstRotate 90s linear infinite;
+}
+@keyframes sunburstRotate {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.hero-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.star {
+  position: absolute;
+  width: 2px; height: 2px;
+  background: var(--gold-light);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--gold);
+  animation: twinkle 3s ease-in-out infinite;
+}
+.star:nth-child(2n) { animation-duration: 4s; animation-delay: 0.3s; }
+.star:nth-child(3n) { animation-duration: 5s; animation-delay: 0.7s; }
+.star:nth-child(4n) { animation-duration: 3.5s; animation-delay: 1.1s; }
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* ── CORNER ORNAMENTS ── */
+.corner {
+  position: absolute;
+  width: 14px; height: 14px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.corner.tl { top: 8px; left: 8px; border-top: 1px solid var(--gold); border-left: 1px solid var(--gold); transform: translate(4px, 4px); }
+.corner.tr { top: 8px; right: 8px; border-top: 1px solid var(--gold); border-right: 1px solid var(--gold); transform: translate(-4px, 4px); }
+.corner.bl { bottom: 8px; left: 8px; border-bottom: 1px solid var(--gold); border-left: 1px solid var(--gold); transform: translate(4px, -4px); }
+.corner.br { bottom: 8px; right: 8px; border-bottom: 1px solid var(--gold); border-right: 1px solid var(--gold); transform: translate(-4px, -4px); }
+.opp-card:hover .corner,
+.testimonial:hover .corner { opacity: 1; transform: translate(0, 0); }
+
+/* ── FLEURON DIVIDER ── */
+.fleuron-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 3rem 6vw;
+  background: var(--bg-surface);
+}
+.fleuron-line {
+  flex: 1;
+  max-width: 200px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+.fleuron-divider svg {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
 /* ── SCROLL REVEAL ── */
 .reveal {
   opacity: 0;
@@ -1273,6 +1361,12 @@ footer {
   .cta-banner-btn { padding: 1rem 2rem; width: 100%; text-align: center; }
 
   .hero-bg-word { font-size: 40vw; bottom: -5vw; }
+  .hero-palace { opacity: 0.18; width: 200%; bottom: 0; }
+  .hero-sunburst { width: 500px; height: 500px; top: 30%; }
+  .fleuron-divider { padding: 2rem 5vw; gap: 1rem; }
+  .fleuron-line { max-width: 80px; }
+  .fleuron-divider svg { width: 60px; }
+  .corner { width: 10px; height: 10px; }
 
   .income-strip { padding: 3.5rem 5vw; gap: 2.5rem; }
   .income-heading { font-size: clamp(1.5rem, 7vw, 2rem); }
