@@ -209,6 +209,51 @@ if (particlesContainer) {
   }
 }
 
+// ── HERO PARALLAX ──
+const heroGrid = document.querySelector('.hero-bg-grid');
+const heroOrb = document.querySelector('.hero-orb');
+const heroWord = document.querySelector('.hero-bg-word');
+
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y < window.innerHeight) {
+    if (heroGrid) heroGrid.style.transform = `translateY(${y * 0.3}px)`;
+    if (heroOrb) heroOrb.style.transform = `translate(${y * 0.1}px, ${y * 0.2}px)`;
+    if (heroWord) heroWord.style.transform = `translateX(-50%) translateY(${y * -0.15}px)`;
+  }
+});
+
+// ── CURSOR "VIEW" LABEL on cards ──
+if (!isTouchDevice) {
+  const viewables = document.querySelectorAll('.opp-card, .testimonial');
+  const cursorRing = document.getElementById('cursorRing');
+  viewables.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursorRing.classList.add('view-label');
+      cursorRing.classList.remove('hovering');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursorRing.classList.remove('view-label');
+    });
+  });
+}
+
+// ── FLOATING MOBILE CTA ──
+const floatingCta = document.getElementById('floatingCta');
+if (floatingCta) {
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const contactSection = document.getElementById('contact');
+    const contactTop = contactSection ? contactSection.offsetTop : Infinity;
+    // Show after scrolling past first viewport, hide when near contact form
+    if (scrolled > window.innerHeight * 0.6 && scrolled < contactTop - 300) {
+      floatingCta.classList.add('visible');
+    } else {
+      floatingCta.classList.remove('visible');
+    }
+  });
+}
+
 // ── FORM SUBMIT ──
 function handleSubmit(e) {
   e.preventDefault();
